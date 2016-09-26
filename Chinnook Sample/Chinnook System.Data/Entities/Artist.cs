@@ -23,9 +23,17 @@ namespace Chinnook_System.Data.Entities
         // poperty names should use sql attribute name
         // properties should listed in the same order as sql table attributes for ease of maintenance
         [Key]
-
         public int ArtistsId { get; set; }
         public string Name { get; set; }
-        
+
+        // Naviagation property for use by Linq
+        // This properties will be of type virtual
+        // There are two types of naviagation properties 
+        // Properties that point to "childred" use ICollection<T>
+        // Properties that point to "parent" use ParentName as the DataType
+        public virtual ICollection<Album> Albums { get; set; }
+
+
+
     }
 }
