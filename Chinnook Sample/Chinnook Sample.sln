@@ -21,6 +21,7 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Chinnook Sample1", "..\Chin
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
 		VWDPort = "64830"
+		SlnRelativePath = "..\Chinnook Sample1\"
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chinnook System.Data", "Chinnook System.Data\Chinnook System.Data.csproj", "{3E805FC5-9134-4B51-A144-B7DA1C76EB13}"
