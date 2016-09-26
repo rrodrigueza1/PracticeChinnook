@@ -24,7 +24,7 @@ namespace Chinnook_System.Data.Entities
         public int Milliseconds {get; set;}
         public int Bytes { get; set; }
         public decimal UnitPrice { get; set; }
-        public virtual ICollection<MediaTypes> MediaTypes { get; set; }
+        public virtual MediaType MediaTypes { get; set; }
         
     }
 }

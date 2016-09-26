@@ -16,5 +16,6 @@ namespace Chinnook_System.Data.Entities
     {
         public int MediaTypeId { get; set; }
         public string Name { get; set; }
+        public virtual ICollection<Tracks> Tracks { get; set; }
     }
 }
