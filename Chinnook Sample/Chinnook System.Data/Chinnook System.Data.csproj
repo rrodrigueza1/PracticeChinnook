@@ -46,6 +46,7 @@
     <Compile Include="Entities\Artist.cs" />
     <Compile Include="Entities\MediaType.cs" />
     <Compile Include="Entities\Tracks.cs" />
+    <Compile Include="POCO\ArtistsAlbum.cs" />
     <Compile Include="POCO\CheckCustomer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
