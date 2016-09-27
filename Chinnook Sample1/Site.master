@@ -46,13 +46,11 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" runat="server" href="~/">Application name</a>
+                    <a class="navbar-brand" runat="server" href="~/">Chinook Practice</a>
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li><a runat="server" href="~/">Home</a></li>
-                        <li><a runat="server" href="~/About">About</a></li>
-                        <li><a runat="server" href="~/Contact">Contact</a></li>
                     </ul>
                     <asp:LoginView runat="server" ViewStateMode="Disabled">
                         <AnonymousTemplate>
@@ -70,6 +68,20 @@
                             </ul>
                         </LoggedInTemplate>
                     </asp:LoginView>
+                      <asp:Menu ID="MenuSample" runat="server" BackColor ="Black" BorderColor="Red"
+                         StaticMenuItemStyle-ForeColor ="White" StaticMenuItemStyle-VerticalPadding ="10px"
+                         StaticMenuItemStyle-HorizontalPadding ="10px" RenderingMode="List" Orientation="Horizontal"
+                         DynamicMenuStyle-BackColor ="Black" DynamicMenuStyle-ForeColor="White">
+
+                        <Items>
+                            <asp:MenuItem Text="Home" NavigateUrl="~/Default.aspx"></asp:MenuItem>
+                            <asp:MenuItem Text="Chinook" Value="0">
+                                <asp:MenuItem Text="First Sample" NavigateUrl="~/SamplePages/Page1"></asp:MenuItem>
+                            </asp:MenuItem>
+                            <asp:MenuItem Text="About" NavigateUrl="~/About.aspx"></asp:MenuItem>
+                            <asp:MenuItem Text="Contact" NavigateUrl="~/Contact.aspx"></asp:MenuItem>
+                        </Items>
+                    </asp:Menu>
                 </div>
             </div>
         </div>

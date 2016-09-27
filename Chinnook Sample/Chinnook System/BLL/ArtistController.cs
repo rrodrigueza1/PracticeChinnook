@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 #region
-using System.ComponentModel;
+using System.ComponentModel; // ODS
 using Chinnook_System.Data.Entities;
 using Chinnook_System.Data.POCO;
 using Chinnook_System.DAL;
@@ -32,6 +32,7 @@ namespace Chinnook_System.BLL
         // mulitple tables/entities
         // this will use Linq to Entity Access
         // POCO Classes will be use to define the data
+        [DataObjectMethod(DataObjectMethodType.Select, false)]
         public List<ArtistsAlbum> ArtistAlbums_Get()
         {
             //setup transaction area
