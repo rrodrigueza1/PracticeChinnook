@@ -12,7 +12,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Chinnook_System.Data.Entities
 {
     //point to the sql table that this file maps
-    [Table("Artists", Schema = "dbo")]
+    [Table("Artists")]
     public class Artist
     {
         //   "Key notations is optional if the sql pkey ends in ID or id"
@@ -23,7 +23,7 @@ namespace Chinnook_System.Data.Entities
         // poperty names should use sql attribute name
         // properties should listed in the same order as sql table attributes for ease of maintenance
         [Key]
-        public int ArtistsId { get; set; }
+        public int ArtistId { get; set; }
         public string Name { get; set; }
 
         // Naviagation property for use by Linq

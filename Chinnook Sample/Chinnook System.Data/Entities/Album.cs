@@ -11,7 +11,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Chinnook_System.Data.Entities
 {
-    [Table("Artists", Schema = "dbo")]
+    [Table("Albums")]
     public class Album
     {
         public int AlbumId { get; set; }

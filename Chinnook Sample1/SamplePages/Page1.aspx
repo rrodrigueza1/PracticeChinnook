@@ -8,7 +8,7 @@
     </div>
     <asp:GridView ID="EntityFramewrokGridView" runat="server" DataSourceID="EntityFrameworkODS" AllowPaging="True">
         <Columns>
-            <asp:BoundField DataField="ArtistsId" HeaderText="ArtistsId" SortExpression="ArtistsId"></asp:BoundField>
+            <asp:BoundField DataField="ArtistId" HeaderText="ArtistId" SortExpression="ArtistId"></asp:BoundField>
             <asp:BoundField DataField="Name" HeaderText="Name" SortExpression="Name"></asp:BoundField>
         </Columns>
     </asp:GridView>
