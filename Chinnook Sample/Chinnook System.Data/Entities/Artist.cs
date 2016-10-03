@@ -29,7 +29,7 @@ namespace Chinnook_System.Data.Entities
         // Naviagation property for use by Linq
         // This properties will be of type virtual
         // There are two types of naviagation properties 
-        // Properties that point to "childred" use ICollection<T>
+        // Properties that point to "children" use ICollection<T>
         // Properties that point to "parent" use ParentName as the DataType
         public virtual ICollection<Album> Albums { get; set; }
 

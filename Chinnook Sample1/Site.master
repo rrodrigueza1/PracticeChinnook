@@ -77,6 +77,7 @@
                             <asp:MenuItem Text="Home" NavigateUrl="~/Default.aspx"></asp:MenuItem>
                             <asp:MenuItem Text="Chinook" Value="0">
                                 <asp:MenuItem Text="First Sample" NavigateUrl="~/SamplePages/Page1"></asp:MenuItem>
+                                <asp:MenuItem Text="Second Sample" NavigateUrl="~/SamplePages/Page2"></asp:MenuItem>
                             </asp:MenuItem>
                             <asp:MenuItem Text="About" NavigateUrl="~/About.aspx"></asp:MenuItem>
                             <asp:MenuItem Text="Contact" NavigateUrl="~/Contact.aspx"></asp:MenuItem>

@@ -26,6 +26,7 @@ namespace Chinnook_System.DAL
         public DbSet<Album> Albums { get; set; }
         public DbSet<MediaType> MediaTypes { get; set; }
         public DbSet<Tracks> Tracks { get; set; }
-
+        public DbSet<Customer> Customers { get; set; }
+        public DbSet<Employee> Employees { get; set; }
     }
 }
