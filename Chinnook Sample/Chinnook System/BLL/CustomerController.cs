@@ -16,12 +16,12 @@ namespace Chinnook_System.BLL
     public class CustomerController
     {
         [DataObjectMethod(DataObjectMethodType.Select, false)]
-        public List<CheckCustomer> CustomerRepresentative()
+        public List<CheckCustomer> CustomerRepresentative(int employeeid)
         {          
             using (var context = new Chinookcontext())
             {
                 var result = from x in context.Customers
-                             where x.Employee.FirstName.Equals("Jane") && x.Employee.LastName.Equals("Peacock")
+                             where x.Employee.EmployeeId == employeeid
                              select new CheckCustomer
                              {
                                  Name = x.LastName + ", " + x.FirstName,

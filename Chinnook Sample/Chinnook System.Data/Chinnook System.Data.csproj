@@ -50,6 +50,7 @@
     <Compile Include="Entities\Tracks.cs" />
     <Compile Include="POCO\ArtistsAlbum.cs" />
     <Compile Include="POCO\CheckCustomer.cs" />
+    <Compile Include="POCO\EmployeeList.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

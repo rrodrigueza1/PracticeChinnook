@@ -11,7 +11,7 @@
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
-    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
 </head>
@@ -68,16 +68,17 @@
                             </ul>
                         </LoggedInTemplate>
                     </asp:LoginView>
-                      <asp:Menu ID="MenuSample" runat="server" BackColor ="Black" BorderColor="Red"
-                         StaticMenuItemStyle-ForeColor ="White" StaticMenuItemStyle-VerticalPadding ="10px"
-                         StaticMenuItemStyle-HorizontalPadding ="10px" RenderingMode="List" Orientation="Horizontal"
-                         DynamicMenuStyle-BackColor ="Black" DynamicMenuStyle-ForeColor="White">
+                    <asp:Menu ID="MenuSample" runat="server" BackColor="Black" BorderColor="Red"
+                        StaticMenuItemStyle-ForeColor="White" StaticMenuItemStyle-VerticalPadding="10px"
+                        StaticMenuItemStyle-HorizontalPadding="10px" RenderingMode="List" Orientation="Horizontal"
+                        DynamicMenuStyle-BackColor="Black" DynamicMenuStyle-ForeColor="White">
 
                         <Items>
                             <asp:MenuItem Text="Home" NavigateUrl="~/Default.aspx"></asp:MenuItem>
                             <asp:MenuItem Text="Chinook" Value="0">
                                 <asp:MenuItem Text="First Sample" NavigateUrl="~/SamplePages/Page1"></asp:MenuItem>
                                 <asp:MenuItem Text="Second Sample" NavigateUrl="~/SamplePages/Page2"></asp:MenuItem>
+                                <asp:MenuItem Text="Third Sample" NavigateUrl="~/SamplePages/Page3"></asp:MenuItem>
                             </asp:MenuItem>
                             <asp:MenuItem Text="About" NavigateUrl="~/About.aspx"></asp:MenuItem>
                             <asp:MenuItem Text="Contact" NavigateUrl="~/Contact.aspx"></asp:MenuItem>
