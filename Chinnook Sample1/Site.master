@@ -72,9 +72,7 @@
                         StaticMenuItemStyle-ForeColor="White" StaticMenuItemStyle-VerticalPadding="10px"
                         StaticMenuItemStyle-HorizontalPadding="10px" RenderingMode="List" Orientation="Horizontal"
                         DynamicMenuStyle-BackColor="Black" DynamicMenuStyle-ForeColor="White">
-
                         <Items>
-                            <asp:MenuItem Text="Home" NavigateUrl="~/Default.aspx"></asp:MenuItem>
                             <asp:MenuItem Text="Chinook" Value="0">
                                 <asp:MenuItem Text="First Sample" NavigateUrl="~/SamplePages/Page1"></asp:MenuItem>
                                 <asp:MenuItem Text="Second Sample" NavigateUrl="~/SamplePages/Page2"></asp:MenuItem>
