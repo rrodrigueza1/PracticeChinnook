@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using Chinnook_Sample;
 
+using Chinnook_System.Security;
+
 public partial class Account_Manage : System.Web.UI.Page
 {
     protected string SuccessMessage

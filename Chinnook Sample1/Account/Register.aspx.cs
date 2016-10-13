@@ -3,7 +3,7 @@ using System;
 using System.Linq;
 using System.Web.UI;
 using Chinnook_Sample;
-
+using Chinnook_System.Security;
 public partial class Account_Register : Page
 {
     protected void CreateUser_Click(object sender, EventArgs e)

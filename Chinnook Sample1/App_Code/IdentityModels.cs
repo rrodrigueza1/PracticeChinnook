@@ -5,30 +5,11 @@ using System.Web;
 using System;
 using Chinnook_Sample;
 
-namespace Chinnook_Sample
-{
-    // You can add User data for the user by adding more properties to your User class, please visit http://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
-    public class ApplicationUser : IdentityUser
-    {
-    }
-
-    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
-    {
-        public ApplicationDbContext()
-            : base("DefaultConnection")
-        {
-        }
-    }
-
-    #region Helpers
-    public class UserManager : UserManager<ApplicationUser>
-    {
-        public UserManager()
-            : base(new UserStore<ApplicationUser>(new ApplicationDbContext()))
-        {
-        }
-    }
-}
+#region Additional NameSpaces
+// For Security Purposes
+// This handles the applciation user, application dbcontext and application user manager
+using Chinnook_System.Security;
+#endregion
 
 namespace Chinnook_Sample
 {
@@ -73,5 +54,4 @@ namespace Chinnook_Sample
             }
         }
     }
-    #endregion
 }

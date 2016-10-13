@@ -3,7 +3,7 @@ using Microsoft.Owin.Security;
 using System;
 using System.Web;
 using Chinnook_Sample;
-
+using Chinnook_System.Security;
 public partial class Account_RegisterExternalLogin : System.Web.UI.Page
 {
     protected string ProviderName
