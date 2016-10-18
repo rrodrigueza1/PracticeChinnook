@@ -78,6 +78,7 @@
                                 <asp:MenuItem Text="Second Sample" NavigateUrl="~/SamplePages/Page2"></asp:MenuItem>
                                 <asp:MenuItem Text="Third Sample" NavigateUrl="~/SamplePages/Page3"></asp:MenuItem>
                             </asp:MenuItem>
+                            <asp:MenuItem Text="AdminPage" NavigateUrl="~/Admin/Security/WebMasterPage.aspx"></asp:MenuItem>
                             <asp:MenuItem Text="About" NavigateUrl="~/About.aspx"></asp:MenuItem>
                             <asp:MenuItem Text="Contact" NavigateUrl="~/Contact.aspx"></asp:MenuItem>
                         </Items>
