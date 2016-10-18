@@ -22,7 +22,7 @@ public partial class _Default : Page
             // Are you allowed to be on this page?
             if(!User.IsInRole(SecurityRoles.WebSiteAdmins))
             {
-                Response.Redirect("~/Account/Default.aspx");
+                Response.Redirect("~/SamplePages/Page2.aspx");
             }
         }
     }

@@ -20,7 +20,7 @@ public partial class SamplePages_Page1 : System.Web.UI.Page
             // Are you allowed to be on this page?
             if (!User.IsInRole(SecurityRoles.WebSiteAdmins))
             {
-                Response.Redirect("~/Account/Default.aspx");
+                Response.Redirect("~/Default.aspx");
             }
         }
     }
