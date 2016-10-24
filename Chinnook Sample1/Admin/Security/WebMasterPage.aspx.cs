@@ -14,4 +14,9 @@ public partial class Admin_Security_WebMasterPage : System.Web.UI.Page
     {
 
     }
+
+    protected void RefreshAll(object sender, EventArgs e)
+    {
+        DataBind();
+    }
 }

@@ -19,42 +19,64 @@
                     <h1>Users</h1>
                 </div>
                 <div class="tab-pane fade" id="roles">
-                    <asp:ListView ID="RoleListView" runat="server" DataSourceID="RoleListViewODS" ItemType="RoleProfile" InsertItemPosition="LastItem">
+                    <!-- DataKeyNames contains the considered PK Field of the class that is being used Insert or Delete -->
+                    <!-- RefreshAll will call a generic methid in my code behind that will cause the ODS sets to re-bind their data-->
+                    <asp:ListView ID="RoleListView" runat="server"
+                        DataSourceID="RoleListViewODS"
+                        ItemType="Chinnook_System.Security.RoleProfile"
+                        InsertItemPosition="LastItem"
+                        DataKeyNames="RoleId"
+                        OnItemInserted="RefreshAll"
+                        OnItemDeleted="RefreshAll">
                         <EmptyDataTemplate>
                             <span>No Security Roles has been setup</span>
                         </EmptyDataTemplate>
                         <LayoutTemplate>
-                            <div class="col-sm-3 h4">Action</div>
-                            <div class="col-sm-3 h4">RoleName</div>
-                            <div class="col-sm-6 h4">Users</div>
+                            <div class="row biginfo">
+                                <div class="col-sm-3 h4">Action</div>
+                                <div class="col-sm-3 h4">RoleName</div>
+                                <div class="col-sm-6 h4">Users</div>
+                            </div>
+                            <div id="itemPlaceholder" runat="server">
+                            </div>
                         </LayoutTemplate>
                         <ItemTemplate>
-                            <div class="col-sm-3">
-                                <asp:LinkButton ID="RemoveRole" runat="server">Remove</asp:LinkButton>
-                            </div>
-                            <div class="col-sm-3">
-                                <%# Item.RoleNamme %>
-                            </div>
-                            <div class="col-sm-6">
-                                <asp:Repeater ID="RoleUsers" runat="server" DataSource="<%Item.UsersName %>" ItemType="System.String">
-                                    <ItemTemplate>
-                                        <%# Item %>
-                                    </ItemTemplate>
-                                    <SeparatorTemplate>, </SeparatorTemplate>
-                                </asp:Repeater>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <asp:LinkButton ID="RemoveRole" CommandName="Delete" runat="server">Remove</asp:LinkButton>
+                                </div>
+                                <div class="col-sm-3">
+                                    <%# Item.RoleName %>
+                                </div>
+                                <div class="col-sm-6">
+                                    <asp:Repeater ID="RoleUsers" runat="server" DataSource="<%# Item.Username %>" ItemType="System.String">
+                                        <ItemTemplate>
+                                            <%# Item %>
+                                        </ItemTemplate>
+                                        <SeparatorTemplate>, </SeparatorTemplate>
+                                    </asp:Repeater>
+                                </div>
                             </div>
                         </ItemTemplate>
                         <InsertItemTemplate>
-                            <div class="col-sm-3">
-                                <asp:LinkButton ID="InsertRole" runat="server">Insert</asp:LinkButton>&nbsp;&nbsp;
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <asp:LinkButton ID="InsertRole" CommandName="Insert" runat="server">Insert</asp:LinkButton>&nbsp;&nbsp;
                                 <asp:LinkButton ID="CancelRole" runat="server">Cancel</asp:LinkButton>
-                            </div>
-                            <div class="col-sm-3">
-                                <asp:TextBox ID="NewRoleName" runat="server" Text='<%# BindItem.RoleName %>' Placeholder="Role Name"></asp:TextBox>
+                                </div>
+                                <div class="col-sm-3">
+                                    <asp:TextBox ID="NewRoleName" runat="server" Text='<%# BindItem.RoleName %>' Placeholder="Role Name"></asp:TextBox>
+                                </div>
                             </div>
                         </InsertItemTemplate>
                     </asp:ListView>
-                    <asp:ObjectDataSource ID="RoleListViewODS" runat="server"></asp:ObjectDataSource>
+                    <asp:ObjectDataSource ID="RoleListViewODS" runat="server"
+                        DataObjectTypeName="Chinnook_System.Security.RoleProfile"
+                        DeleteMethod="DeleteRole"
+                        InsertMethod="AddRole"
+                        OldValuesParameterFormatString="original_{0}"
+                        SelectMethod="ListAllRoles"
+                        TypeName="Chinnook_System.Security.RoleManager"></asp:ObjectDataSource>
                 </div>
                 <div class="tab-pane fade" id="unregistered">
                     <h1>UnregisteredUsers</h1>
