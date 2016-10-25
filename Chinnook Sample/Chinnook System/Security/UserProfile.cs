@@ -8,7 +8,7 @@ namespace Chinnook_System.Security
 {
     public class UserProfile
     {
-        public string UserId { get; set; } // from the AspNetUser Table
+        public int UserId { get; set; } // from the AspNetUser Table
         public string UserName { get; set; } // from then AspNetUser Table
         public int? EmployeeId { get; set; } // from the AspNetUser Table
         public int? CustomerID { get; set; } // from the AspNetUser Table
