@@ -19,4 +19,54 @@ public partial class Admin_Security_WebMasterPage : System.Web.UI.Page
     {
         DataBind();
     }
+
+    protected void UnregisteredUsersGridView_SelectedIndexChanging(object sender, GridViewSelectEventArgs e)
+    {
+        //Position the gridview to the selected index that is the (row) that cause the postback
+        UnregisteredUsersGridView.SelectedIndex = e.NewSelectedIndex;
+
+        //setup a variable that will be the physical pointer to the selected row
+        GridViewRow row = UnregisteredUsersGridView.SelectedRow;
+
+        // you can always check a pointer to see if something has been obtained
+        if (row != null)
+        {
+            // access information contained in a textbox on the gridview row
+            // use the method .FindControl("ControlID") as ControlType
+            // once you have a pointer to the control, you can access the data content of the control using
+            // the contro's access method
+            string assignedUsername = "";
+            TextBox inputControl = row.FindControl("AssignedUsernane") as TextBox;
+            if (inputControl != null)
+            {
+                assignedUsername = inputControl.Text;
+            }
+            string assignedEmail = (row.FindControl("AssignedEmail") as TextBox).Text;
+
+            // create the unregistered user instance
+            // during creation, I will pass to it the needed data to load the instance attribute
+
+            // accessing boindfields on a gridview row uses .Cells[index].Text
+            // index represents the column of the grid
+            // columns are index (starting at 0)
+            UnregisteredUserProfile unreguser = new UnregisteredUserProfile()
+            {
+                UserId = UnregisteredUsersGridView.SelectedDataKey.Value.ToString(),
+                UserType = (UnRegisteredUserType)Enum.Parse(typeof(UnRegisteredUserType), row.Cells[1].Text),
+                FirstName = row.Cells[2].Text,
+                LastName = row.Cells[3].Text,
+                UserName = assignedUsername,
+                EmailAddress = assignedEmail
+
+            };
+            // register the user via Chinnook UserManager controller
+            UserManager sysmgr = new UserManager();
+            sysmgr.RegisterUser(unreguser);
+
+            // we can assume successful creation of a user 
+            // refresh the form
+
+            DataBind();
+        }
+    }
 }

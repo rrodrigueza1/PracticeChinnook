@@ -79,7 +79,41 @@
                         TypeName="Chinnook_System.Security.RoleManager"></asp:ObjectDataSource>
                 </div>
                 <div class="tab-pane fade" id="unregistered">
-                    <h1>UnregisteredUsers</h1>
+                    <!-- Gridview handling Unregistered Users -->
+                    <asp:GridView ID="UnregisteredUsersGridView" runat="server"
+                        AutoGenerateColumns="False"
+                        DataSourceID="UnregisteredUsersODS"
+                        DataKeyNames="UserId"
+                        ItemType="Chinnook_System.Security.UnregisteredUserProfile" OnSelectedIndexChanging="UnregisteredUsersGridView_SelectedIndexChanging">
+                        <Columns>
+                            <asp:CommandField SelectText="Register" ShowSelectButton="True"></asp:CommandField>
+                            <asp:BoundField DataField="UserType" HeaderText="UserType" SortExpression="UserType"></asp:BoundField>
+                            <asp:BoundField DataField="FirstName" HeaderText="FirstName" SortExpression="FirstName"></asp:BoundField>
+                            <asp:BoundField DataField="Lastname" HeaderText="Lastname" SortExpression="Lastname"></asp:BoundField>
+                            <asp:TemplateField HeaderText="AssignedUserName" SortExpression="AssignedUserName">
+                                <ItemTemplate>
+                                    <asp:TextBox runat="server" Text='<%# Bind("UserName") %>'
+                                        ID="AssignedUserName"></asp:TextBox>
+                                </ItemTemplate>
+
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="AssignedEmail" SortExpression="AssignedEmail">
+                                <ItemTemplate>
+                                    <asp:TextBox runat="server" Text='<%# Bind("EmailAddress") %>'
+                                        ID="AssignedEmail"></asp:TextBox>
+                                </ItemTemplate>
+
+                            </asp:TemplateField>
+
+                        </Columns>
+                        <EmptyDataTemplate>
+                            No Unregistered User to Process
+                        </EmptyDataTemplate>
+                    </asp:GridView>
+                    <asp:ObjectDataSource ID="UnregisteredUsersODS" runat="server"
+                        OldValuesParameterFormatString="original_{0}"
+                        SelectMethod="ListAllUnRegisteredUsers"
+                        TypeName="Chinnook_System.Security.UserManager"></asp:ObjectDataSource>
                 </div>
             </div>
         </div>
